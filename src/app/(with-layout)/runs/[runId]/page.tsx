@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { use, useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 import {
   Table,
@@ -114,9 +115,9 @@ function Card({
 
 function Memo({ text }: { text: string }) {
   return (
-    <pre className="max-h-150 overflow-auto rounded-lg bg-gray-1 p-4 text-sm whitespace-pre-wrap text-dark dark:bg-dark-2 dark:text-dark-6">
-      {text}
-    </pre>
+    <div className="markdown-body max-h-150 overflow-auto rounded-lg bg-gray-1 p-4 dark:bg-dark-2">
+      <ReactMarkdown>{text}</ReactMarkdown>
+    </div>
   );
 }
 

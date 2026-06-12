@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { AllocationDonut } from "@/components/Stocks/allocation-donut";
 import { EquityCurve } from "@/components/Stocks/equity-curve";
 import { RunCouncilButton } from "@/components/Stocks/run-council-button";
 import { StatsCards } from "@/components/Stocks/stats-cards";
@@ -27,8 +28,13 @@ export default function Home() {
 
       <StatsCards />
 
-      <div className="mt-4 md:mt-6">
-        <EquityCurve />
+      <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6">
+        <div className="col-span-12 2xl:col-span-8">
+          <EquityCurve />
+        </div>
+        <div className="col-span-12 2xl:col-span-4">
+          <AllocationDonut />
+        </div>
       </div>
 
       <div className="mt-4 md:mt-6">
